@@ -19,7 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'core',
-    'build',
+    'compose',
     'analysis'
 ]
 
