@@ -1,5 +1,5 @@
 """
-Server API URLS
+API URLS
 """
 from django.contrib import admin
 from django.urls import path
