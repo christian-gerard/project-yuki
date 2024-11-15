@@ -2,11 +2,12 @@
 DJANGO SETTINGS
 """
 from pathlib import Path
+import os
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'django-insecure-zumc5jwfbv91+uaoza2xp4w+#rjn(^ue#&q)xcsh=ms406i3(('
-DEBUG = True
+SECRET_KEY = os.environ.get('SECRET_KEY', 'changeme')
+DEBUG = os.environ.get('DEBUG',  False)
 
 ALLOWED_HOSTS = []
 
@@ -55,8 +56,34 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': os.environ.get('CORE_DB_HOST'),
+        'NAME': os.environ.get('CORE_DB_NAME'),
+        'USER': os.environ.get('CORE_DB_USER'),
+        'PASSWORD': os.environ.get('CORE_DB_PASS'),
+        'OPTIONS': {
+            'sslmode': 'disable',  # Disable SSL explicitly
+        },
+    },
+    'build': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': os.environ.get('BUILD_DB_HOST'),
+        'NAME': os.environ.get('BUILD_DB_NAME'),
+        'USER': os.environ.get('BUILD_DB_USER'),
+        'PASSWORD': os.environ.get('BUILD_DB_PASS'),
+        'OPTIONS': {
+            'sslmode': 'disable',  # Disable SSL explicitly
+        },
+    },
+    'analysis': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': os.environ.get('ANALYSIS_DB_HOST'),
+        'NAME': os.environ.get('ANALYSIS_DB_NAME'),
+        'USER': os.environ.get('ANALYSIS_DB_USER'),
+        'PASSWORD': os.environ.get('ANALYSIS_DB_PASS'),
+        'OPTIONS': {
+            'sslmode': 'disable',  # Disable SSL explicitly
+        },
     }
 }
 
