@@ -3,6 +3,9 @@ DJANGO SETTINGS
 """
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -10,6 +13,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'changeme')
 DEBUG = os.environ.get('DEBUG',  False)
 
 ALLOWED_HOSTS = []
+ALLOWED_HOSTS.extend(filter( None, os.environ.get('ALLOWED_HOSTS', '').split(','),))
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -57,7 +61,7 @@ WSGI_APPLICATION = 'app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': os.environ.get('CORE_DB_HOST'),
+        'HOST': os.environ.get('CORE_DB_HOST', 'localhost'),
         'NAME': os.environ.get('CORE_DB_NAME'),
         'USER': os.environ.get('CORE_DB_USER'),
         'PASSWORD': os.environ.get('CORE_DB_PASS'),
@@ -67,7 +71,7 @@ DATABASES = {
     },
     'build': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': os.environ.get('BUILD_DB_HOST'),
+        'HOST': os.environ.get('BUILD_DB_HOST', 'localhost'),
         'NAME': os.environ.get('BUILD_DB_NAME'),
         'USER': os.environ.get('BUILD_DB_USER'),
         'PASSWORD': os.environ.get('BUILD_DB_PASS'),
@@ -77,7 +81,7 @@ DATABASES = {
     },
     'analysis': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': os.environ.get('ANALYSIS_DB_HOST'),
+        'HOST': os.environ.get('ANALYSIS_DB_HOST', 'localhost'),
         'NAME': os.environ.get('ANALYSIS_DB_NAME'),
         'USER': os.environ.get('ANALYSIS_DB_USER'),
         'PASSWORD': os.environ.get('ANALYSIS_DB_PASS'),
