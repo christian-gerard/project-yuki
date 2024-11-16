@@ -24,6 +24,49 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+###### Declare Environment Variables
+
+```
+touch .env
+```
+
+
+**Add the folowing variables to .env file**
+
+CORE_DB_HOST=core_db
+
+CORE_DB_NAME=yuki_core_db
+
+CORE_DB_USER=devuser
+
+CORE_DB_PASS=changeme
+
+BUILD_DB_HOST=build_db
+
+BUILD_DB_NAME=yuki_build_db
+
+BUILD_DB_USER=devuser
+
+BUILD_DB_PASS=changeme
+
+ANALYSIS_DB_HOST=analysis_db
+
+ANALYSIS_DB_NAME=yuki_analysis_db
+
+ANALYSIS_DB_USER=devuser
+
+ANALYSIS_DB_PASS=changeme
+
+ALLOWED_HOSTS=0.0.0.0
+
+SECRET_KEY=[INSERT NEW SECRET KEY]
+
+DEBUG=True
+
+
+
+**Save the .env file**
+
 ###### Build & Run Docker Containers
 
 ```
