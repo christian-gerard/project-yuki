@@ -30,7 +30,6 @@ pip install -r requirements.txt
 touch .env
 ```
 
-
 **Add the folowing variables to .env file**
 
 CORE_DB_HOST=core_db
@@ -62,8 +61,6 @@ ALLOWED_HOSTS=0.0.0.0
 SECRET_KEY=[INSERT NEW SECRET KEY]
 
 DEBUG=True
-
-
 
 **Save the .env file**
 
