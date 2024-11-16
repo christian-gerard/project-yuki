@@ -23,6 +23,8 @@ class Command(BaseCommand):
         while db_up is False:
             try:
                 self.check(databases=['default'])
+                self.check(databases=['build'])
+                self.check(databases=['analysis'])
                 db_up = True
 
             except(Psycopg2Error, OperationalError):
