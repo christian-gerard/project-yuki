@@ -4,11 +4,11 @@ Synoptic Weather API Data
 
 from django.db import models
 
-def WeatherData(models.Manager):
+class WeatherData(models.Model):
     """ Weather Data Model """
 
-    name = models.CharField(max_length=255)
-    type = models.CharField(max_length=255, blank=True, null=True)
+    weatherStation = models.DecimalField()
+    temperature = models.DecimalField()
 
     def __str__(self):
-        return self.name
+        return self.weatherStation
