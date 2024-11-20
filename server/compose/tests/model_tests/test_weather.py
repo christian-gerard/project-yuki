@@ -17,3 +17,7 @@ class WeatherModelTests(TestCase):
     def test_tests_folder(self):
         """Testing Django Testing"""
         pass
+
+    def test_create_weather_data(self):
+        """Updating Again"""
+        pass
