@@ -12,13 +12,5 @@ class WeatherStation(models.Model):
     longitude = models.FloatField()
 
 
-#     'ELEVATION': '8752.0',
-#    'LATITUDE': '40.59148',
-#    'LONGITUDE': '-111.63778',
-
-
-    def __str__():
+    def __str__(self):
         return self.name
-
-
-    pass
