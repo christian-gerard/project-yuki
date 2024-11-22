@@ -11,7 +11,7 @@ class atWater_station(models.Model):
     air_temp = models.FloatField()
     relative_humidity = models.FloatField()
     wind_speed = models.FloatField()
-    wind_direction = models.CharField()
+    wind_direction = models.CharField(max_length=255)
     wind_gust = models.FloatField()
     solar_radiation = models.FloatField()
     outgoing_radiation_lw = models.FloatField()
