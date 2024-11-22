@@ -4,7 +4,7 @@ Synoptic Weather API Data
 
 from django.db import models
 
-class AtWater_86136(models.Model):
+class atWater_station(models.Model):
     """ Weather Data Model """
 
     time_stamp = models.DateTimeField()
