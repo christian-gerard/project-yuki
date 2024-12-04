@@ -13,10 +13,6 @@ class atWater_station(models.Model):
     wind_speed = models.FloatField()
     wind_direction = models.CharField(max_length=255)
     wind_gust = models.FloatField()
-    solar_radiation = models.FloatField()
-    outgoing_radiation_lw = models.FloatField()
-    incoming_radiation_lw = models.FloatField()
-    snow_depth = models.FloatField()
     surface_temp = models.FloatField()
     volt = models.FloatField()
     wind_cardinal_direction = models.FloatField()
@@ -24,4 +20,3 @@ class atWater_station(models.Model):
 
     def __str__(self):
         return self.weatherStation
-
