@@ -1,11 +1,11 @@
 """
-Synoptic Weather API Data
+Weather Station Model
 """
-
 from django.db import models
+from . import WeatherStation
 
-class atWater_station(models.Model):
-    """ Weather Data Model """
+class Observation(models.Model):
+    """Fields for Weather Station"""
 
     time_stamp = models.DateTimeField()
     air_temp = models.FloatField()
@@ -18,5 +18,11 @@ class atWater_station(models.Model):
     wind_cardinal_direction = models.FloatField()
     dew_point_temperature = models.FloatField()
 
+    station_id = models.ForeignKey(
+        WeatherStation,
+        related_name='observations',
+        on_delete=models.CASCADE
+    )
+
     def __str__(self):
-        return self.weatherStation
+        return self.name

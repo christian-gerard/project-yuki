@@ -1,6 +1,6 @@
 #root {
   font-family: "Lucida Console", "Courier New", monospace;
-  width: 100vh;
+  overflow: hidden;
   height: 100vh;
   --blue: #2A5791;
   --light-blue: #437F97;
