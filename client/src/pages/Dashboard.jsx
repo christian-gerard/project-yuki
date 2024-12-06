@@ -1,10 +1,10 @@
-import Sway from '../data-visualization/Sway'
+import SWE from '../data-visualization/SWE'
 
 function Dashboard() {
 
     return(
         <>
-            <Sway/>
+            <SWE/>
         </>
     )
 }
