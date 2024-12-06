@@ -1,10 +1,11 @@
+import Sway from '../data-visualization/Sway'
 
 function Dashboard() {
 
     return(
-        <div>
-
-        </div>
+        <>
+            <Sway/>
+        </>
     )
 }
 export default Dashboard

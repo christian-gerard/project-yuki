@@ -15,7 +15,6 @@ const Main = styled.div`
 const Render = styled.div`
     height:92%;
     width:100%;
-    background-color: var(--light-cyan)
 `
 
 function App() {
