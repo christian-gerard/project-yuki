@@ -1,10 +1,18 @@
+import styled from 'styled-components'
+
+const Main  = styled.div`
+    background-color: var(--blue);
+    color: white;
+    padding: 10px;
+`;
+
 
 function Header() {
 
     return(
-        <div>
+        <Main>
             <p>Project Yuki</p>
-        </div>
+        </Main>
     )
 }
 export default Header
