@@ -8,15 +8,15 @@ class Observation(models.Model):
     """Fields for Weather Station"""
 
     time_stamp = models.DateTimeField()
-    air_temp = models.FloatField(max_digits=10, decimal_places=2, default=0.00)
-    relative_humidity = models.FloatField(max_digits=10, decimal_places=2, default=0.00)
-    wind_speed = models.FloatField(max_digits=10, decimal_places=2, default=0.00)
+    air_temp = models.FloatField()
+    relative_humidity = models.FloatField()
+    wind_speed = models.FloatField()
     wind_direction = models.CharField(max_length=255)
-    wind_gust = models.FloatField(max_digits=10, decimal_places=2, default=0.00)
-    surface_temp = models.FloatField(max_digits=10, decimal_places=2, default=0.00)
-    volt = models.FloatField(max_digits=10, decimal_places=2, default=0.00)
-    wind_cardinal_direction = models.FloatField(max_digits=10, decimal_places=2, default=0.00)
-    dew_point_temperature = models.FloatField(max_digits=10, decimal_places=2, default=0.00)
+    wind_gust = models.FloatField()
+    surface_temp = models.FloatField()
+    volt = models.FloatField()
+    wind_cardinal_direction = models.FloatField()
+    dew_point_temperature = models.FloatField()
 
     station_id = models.ForeignKey(
         WeatherStation,
