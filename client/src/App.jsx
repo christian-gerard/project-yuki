@@ -5,27 +5,25 @@ import './App.css'
 import styled from 'styled-components'
 
 const Header = styled.div`
-  background-color: blue;
+  background-color: var(--blue);
   color: white;
   padding: 10px;
 `;
 
-const AppWindow = styled.div`
-  border: black 1 solid;
-  width: 100%;
-  height: 100%;
-  background-color:blue;
+const Title = styled.div`
+   font-size:2em;
 `
 
 function App() {
 
   return (
-    <AppWindow>
       <Header>
-        <p>Deep</p>
-        <p>Testing Names</p>
+        <Title>
+          <p>Project Yuki</p>
+        </Title>
+
       </Header>
-    </AppWindow>  )
+  )
 }
 
 export default App
