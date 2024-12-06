@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Main = styled.div`
     background-color: var(--blue);
-    font-size: 1.2em;
+    font-size: 0.9em;
     color:white;
     display: flex;
     justify-content: center;

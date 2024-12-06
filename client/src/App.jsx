@@ -15,6 +15,7 @@ const Main = styled.div`
 const Render = styled.div`
     height:92%;
     width:100%;
+    padding: 20px;
 `
 
 function App() {

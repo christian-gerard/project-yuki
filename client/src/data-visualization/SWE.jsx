@@ -5,9 +5,11 @@ import styled from 'styled-components'
 const Main = styled.div`
     width:50%;
     border: 1px solid black;
+    overflow: hidden;
+    white-space: nowrap;
 `
 
-const swayData = [
+const SWEData = [
     { month: 'Nov', value: 30 },
     { month: 'Dec', value: 50 },
     { month: 'Jan', value: 70 },
@@ -23,10 +25,9 @@ function SWE() {
 
     const svgRef = useRef();
 
-    // D3 chart creation in useEffect to run once component mounts
     useEffect(() => {
         const svg = d3.select(svgRef.current)
-            .attr('width', 500)
+            .attr('width', '100%')
             .attr('height', 300);
 
         const margin = { top: 20, right: 30, bottom: 40, left: 40 };
@@ -34,12 +35,12 @@ function SWE() {
         const height = 300 - margin.top - margin.bottom;
 
         const x = d3.scaleBand()
-            .domain(swayData.map(d => d.month))
+            .domain(SWEData.map(d => d.month))
             .range([0, width])
             .padding(0.1);
 
         const y = d3.scaleLinear()
-            .domain([0, d3.max(swayData, d => d.value)])
+            .domain([0, d3.max(SWEData, d => d.value)])
             .nice()
             .range([height, 0]);
 
@@ -53,7 +54,7 @@ function SWE() {
 
         // Add the line chart path
         g.append('path')
-            .data([swayData])
+            .data([SWEData])
             .attr('fill', 'none')
             .attr('stroke', 'steelblue')
             .attr('stroke-width', 2)
@@ -62,7 +63,7 @@ function SWE() {
         // Add x-axis
         g.append('g')
             .selectAll('.tick')
-            .data(swayData)
+            .data(SWEData)
             .enter()
             .append('text')
             .attr('x', d => x(d.month) + x.bandwidth() / 2)
@@ -79,7 +80,7 @@ function SWE() {
 
     return(
         <Main>
-            <p>SWE MtoM</p>
+            <p style={{'font-size': '1.5em'}}>SWE (Nov. to May.)</p>
             <svg ref={svgRef}></svg>
         </Main>
     )
