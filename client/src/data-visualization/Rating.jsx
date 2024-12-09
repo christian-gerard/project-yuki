@@ -21,6 +21,7 @@ function Rating() {
   `
   const RatingReasons = styled.div`
       width:70%;
+      font-size:2em;
       height:100%;
       border: 1px solid black;
       overflow: hidden;
@@ -40,7 +41,11 @@ function Rating() {
           <li> Increased Snow </li>
           <li> Low SWE </li>
           <li> Good Avy Danger </li>
-
+        </ul>
+         <ul>
+          <li> Large Crowds  </li>
+          <li> Low Snowpack  </li>
+          <li> Traction Law In Place </li>
         </ul>
       </RatingReasons>
     </Main>
