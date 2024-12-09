@@ -21,7 +21,7 @@ function Rating() {
   `
   const RatingReasons = styled.div`
       width:70%;
-      font-size:2em;
+      font-size:1em;
       height:100%;
       border: 1px solid black;
       overflow: hidden;
