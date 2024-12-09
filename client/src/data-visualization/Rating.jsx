@@ -8,9 +8,12 @@ function Rating() {
       border: 1px solid black;
       overflow: hidden;
       white-space: nowrap;
+      display:flex;
+      flex-direction: row;
   `
   const RatingChart = styled.div`
       width:30%;
+      font-size:2em;
       height:100%;
       border: 1px solid black;
       overflow: hidden;
@@ -32,7 +35,13 @@ function Rating() {
       </RatingChart>
 
       <RatingReasons>
+        <p>Rating Reasons</p>
+        <ul>
+          <li> Increased Snow </li>
+          <li> Low SWE </li>
+          <li> Good Avy Danger </li>
 
+        </ul>
       </RatingReasons>
     </Main>
   )
