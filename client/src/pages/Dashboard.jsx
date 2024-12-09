@@ -8,12 +8,11 @@ function Dashboard() {
 
     return(
         <div>
-            <!-- Rating Board -->
+
             <div>
                 <Rating/>
             </div>
 
-            <!-- Avy Danger & Traffic -->
             <div>
                 <AvyDanger/>
                 <Traffic/>
@@ -23,6 +22,7 @@ function Dashboard() {
               <SWE/>
               <SnowDepth/>
             </div>
+
         </div>
     )
 }
