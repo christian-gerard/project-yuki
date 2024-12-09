@@ -23,15 +23,12 @@ function Rating() {
       overflow: hidden;
       white-space: nowrap;
   `
-
-
-
-
   return (
     <Main>
 
       <RatingChart>
-
+        <p> Rating </p>
+        <p> 4 </p>
       </RatingChart>
 
       <RatingReasons>
