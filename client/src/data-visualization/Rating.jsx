@@ -3,7 +3,7 @@ import styled from 'styled-components'
 function Rating() {
 
   const Main = styled.div`
-      width:100%;
+      width:98%;
       height:40%;
       border: 1px solid black;
       overflow: hidden;
