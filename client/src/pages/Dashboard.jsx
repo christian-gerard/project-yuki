@@ -7,11 +7,9 @@ import Traffic from '../data-visualization/Traffic'
 function Dashboard() {
 
     return(
-        <div>
+        <>
 
-            <div>
-                <Rating/>
-            </div>
+            <Rating/>
 
             <div>
                 <AvyDanger/>
@@ -23,7 +21,7 @@ function Dashboard() {
               <SnowDepth/>
             </div>
 
-        </div>
+        </>
     )
 }
 export default Dashboard
