@@ -9,11 +9,34 @@ function Rating() {
       overflow: hidden;
       white-space: nowrap;
   `
+  const RatingChart = styled.div`
+      width:30%;
+      height:100%;
+      border: 1px solid black;
+      overflow: hidden;
+      white-space: nowrap;
+  `
+  const RatingReasons = styled.div`
+      width:70%;
+      height:100%;
+      border: 1px solid black;
+      overflow: hidden;
+      white-space: nowrap;
+  `
+
+
 
 
   return (
     <Main>
-      <p>Rating Board Area</p>
+
+      <RatingChart>
+
+      </RatingChart>
+
+      <RatingReasons>
+
+      </RatingReasons>
     </Main>
   )
 }
