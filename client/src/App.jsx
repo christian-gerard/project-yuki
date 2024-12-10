@@ -15,7 +15,7 @@ const Main = styled.div`
 `
 
 const Render = styled.div`
-    height:92%;
+    height:88%;
     width:100%;
     padding: 20px;
 `
@@ -25,6 +25,7 @@ function App() {
   return (
     <Main>
       <Header/>
+      <Date/>
       <Render>
         <Dashboard/>
       </Render>

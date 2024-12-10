@@ -13,3 +13,5 @@ const Main = styled.div`
     </div>
   )
 }
+
+export default Date
