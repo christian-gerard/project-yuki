@@ -5,12 +5,13 @@ function Date() {
 const Main = styled.div`
   width: 98%; 
   height: 5%;
+  font-size:1.5em;
 `
 
   return (
-    <div>
+    <Main>
       <p> Tuesday Dec 8th </p>
-    </div>
+    </Main>
   )
 }
 
