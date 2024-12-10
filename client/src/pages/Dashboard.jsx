@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import SWE from '../data-visualization/SWE'
 import SnowDepth from '../data-visualization/SnowDepth'
 import Rating from '../data-visualization/Rating'
@@ -11,7 +12,7 @@ function Dashboard() {
   
     const Second = styled.div`
         width:98%;
-        height:30%;
+        height:20%;
         border: 1px solid black;
         overflow: hidden;
         white-space: nowrap;
@@ -20,7 +21,7 @@ function Dashboard() {
   `
     const Third = styled.div`
         width:98%;
-        height:30%;
+        height:40%;
         border: 1px solid black;
         overflow: hidden;
         white-space: nowrap;
@@ -39,8 +40,8 @@ function Dashboard() {
             </Second>
 
             <Third>
-              <SWE/>
               <SnowDepth/>
+              <SWE/>
               <Wind/>
               <Temp/>
             </Third>

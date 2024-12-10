@@ -1,8 +1,10 @@
 import './App.css'
+import { useState } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Dashboard from './pages/Dashboard'
 import Date from './components/Date'
+import About from './components/About'
 
 import styled from 'styled-components'
 
@@ -21,18 +23,22 @@ const Render = styled.div`
 `
 
 function App() {
-
+  const [aboutOpen, setAboutOpen] = useState(false)
+  const handleAboutModal = () => { 
+    setAboutOpen(!aboutOpen)
+  }
   return (
     <Main>
-      <Header/>
+      <Header handleAboutModal={handleAboutModal}/>
       <Date/>
       <Render>
         <Dashboard/>
       </Render>
       <Footer/>
+      { aboutOpen &&
+          <About handleAboutModal={handleAboutModal}/>
+      }
     </Main>
-
-
   )
 }
 

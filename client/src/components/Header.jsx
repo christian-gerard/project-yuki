@@ -7,7 +7,7 @@ const Main  = styled.div`
     padding: 10px;
     text-align: center;
     display: flex;
-    justify-content:left;
+    justify-content:space-between;
     justify-items:center;
     height:5%;
     overflow: hidden;
@@ -17,11 +17,12 @@ const Main  = styled.div`
 `;
 
 
-function Header() {
+function Header({handleAboutModal}) {
 
     return(
         <Main>
             <p>Project Yuki</p>
+            <button onClick={handleAboutModal}>About</button>
         </Main>
     )
 }
