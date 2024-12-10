@@ -21,8 +21,6 @@ const SWEData = [
 
 function SWE() {
 
-
-
     const svgRef = useRef();
 
     useEffect(() => {

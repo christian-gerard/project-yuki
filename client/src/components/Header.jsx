@@ -7,7 +7,7 @@ const Main  = styled.div`
     padding: 10px;
     text-align: center;
     display: flex;
-    justify-content:center;
+    justify-content:left;
     justify-items:center;
     height:5%;
     overflow: hidden;
