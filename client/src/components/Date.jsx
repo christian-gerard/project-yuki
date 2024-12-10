@@ -13,7 +13,7 @@ const Main = styled.div`
 
   return (
     <Main>
-      <p> Tuesday December 8th</p>
+      <p>Tuesday December 8th</p>
     </Main>
   )
 }

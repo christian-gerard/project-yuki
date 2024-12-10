@@ -24,6 +24,7 @@ function Rating() {
       border: 1px solid black;
       overflow: hidden;
       white-space: nowrap;
+      font-size: 1.5em;
   `
   return (
     <Main>

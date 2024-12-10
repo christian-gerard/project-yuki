@@ -3,6 +3,8 @@ import SnowDepth from '../data-visualization/SnowDepth'
 import Rating from '../data-visualization/Rating'
 import AvyDanger from '../data-visualization/AvyDanger'
 import Traffic from '../data-visualization/Traffic'
+import Wind from '../data-visualization/Wind'
+import Temp from '../data-visualization/Temp'
 import styled from 'styled-components'
 
 function Dashboard() {
@@ -13,6 +15,8 @@ function Dashboard() {
         border: 1px solid black;
         overflow: hidden;
         white-space: nowrap;
+        display:flex;
+        flex-direction:row;
   `
     const Third = styled.div`
         width:98%;
@@ -20,6 +24,8 @@ function Dashboard() {
         border: 1px solid black;
         overflow: hidden;
         white-space: nowrap;
+        display:flex;
+        flex-direction:row;
     `
 
     return(
@@ -35,6 +41,8 @@ function Dashboard() {
             <Third>
               <SWE/>
               <SnowDepth/>
+              <Wind/>
+              <Temp/>
             </Third>
 
         </>
