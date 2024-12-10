@@ -13,7 +13,7 @@ function Rating() {
   `
   const RatingChart = styled.div`
       width:30%;
-      font-size:2em;
+      font-size:1.5em;
       height:100%;
       border: 1px solid black;
       overflow: hidden;
@@ -29,8 +29,8 @@ function Rating() {
     <Main>
 
       <RatingChart>
-        <p> Rating </p>
-        <p> 4 </p>
+        <p>Charts</p>
+        <p>Rating</p>
       </RatingChart>
 
       <RatingReasons>
