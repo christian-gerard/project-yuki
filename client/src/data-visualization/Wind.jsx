@@ -2,10 +2,15 @@ import styled from 'styled-components'
 
 function Wind() {
 
+  const Main = styled.div`
+    height:100%;
+    width:25%;
+    border: 1px solid black;
+  `
   return (
-    <div>
+    <Main>
       <p>WIND DATA</p>
-    </div>
+    </Main>
   )
 }
 export default Wind

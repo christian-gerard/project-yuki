@@ -3,7 +3,7 @@ import * as d3 from 'd3';
 import styled from 'styled-components'
 
 const Main = styled.div`
-    width:50%;
+    width:25%;
     border: 1px solid black;
     overflow: hidden;
     white-space: nowrap;
