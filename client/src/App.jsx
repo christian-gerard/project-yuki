@@ -1,7 +1,11 @@
 import './App.css'
+import { useState } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Dashboard from './pages/Dashboard'
+import Date from './components/Date'
+import About from './components/About'
+
 import styled from 'styled-components'
 
 const Main = styled.div`
@@ -13,23 +17,28 @@ const Main = styled.div`
 `
 
 const Render = styled.div`
-    height:92%;
+    height:88%;
     width:100%;
-    padding: 20px;
+   padding: 20px;
 `
 
 function App() {
-
+  const [aboutOpen, setAboutOpen] = useState(false)
+  const handleAboutModal = () => { 
+    setAboutOpen(!aboutOpen)
+  }
   return (
     <Main>
-      <Header/>
+      <Header handleAboutModal={handleAboutModal}/>
+      <Date/>
       <Render>
         <Dashboard/>
       </Render>
       <Footer/>
+      { aboutOpen &&
+          <About handleAboutModal={handleAboutModal}/>
+      }
     </Main>
-
-
   )
 }
 
