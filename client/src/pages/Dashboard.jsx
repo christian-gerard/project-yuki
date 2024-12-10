@@ -6,7 +6,7 @@ import Traffic from '../data-visualization/Traffic'
 import styled from 'styled-components'
 
 function Dashboard() {
-
+  
     const Second = styled.div`
         width:98%;
         height:30%;
