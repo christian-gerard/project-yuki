@@ -6,7 +6,6 @@ function AvyDanger() {
     width:60%;
     height: 100%;
     font-size: 1.5em;
-    border: 1px solid black;
   `
 
   return (

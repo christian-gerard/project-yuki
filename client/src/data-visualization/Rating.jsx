@@ -15,13 +15,11 @@ function Rating() {
       width:30%;
       font-size:1.5em;
       height:100%;
-      border: 1px solid black;
       overflow: hidden;
       white-space: nowrap;
   `
   const RatingReasons = styled.div`
       width:70%;
-      border: 1px solid black;
       overflow: hidden;
       white-space: nowrap;
       font-size: 1.5em;
