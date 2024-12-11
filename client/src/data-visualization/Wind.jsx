@@ -5,7 +5,6 @@ function Wind() {
   const Main = styled.div`
     height:100%;
     width:25%;
-    border: 1px solid black;
   `
   return (
     <Main>
