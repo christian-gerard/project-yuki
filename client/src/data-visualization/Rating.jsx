@@ -2,14 +2,6 @@ import React, { useRef, useEffect } from "react";
 import * as d3 from "d3";
 import styled from 'styled-components'
 
-const data = [
-            { label: "A", status: 1 },
-            { label: "B", status: 3 },
-            { label: "C", status: 5 },
-            { label: "D", status: 4 },
-            { label: "E", status: 2 },
-];
-
 function Rating() {
 
   const Main = styled.div`
@@ -36,21 +28,16 @@ function Rating() {
   `
   const chartRef = useRef(null);
 
-  useEffect(() => {
-    const data = [
-      { label: "A", status: 1 },
-      { label: "B", status: 3 },
-      { label: "C", status: 5 },
-      { label: "D", status: 4 },
-      { label: "E", status: 2 },
-    ];
+  const data = [{
 
-    // Chart dimensions
-    const width = 200;
+  }]
+
+  useEffect(() => {
+    const width = 500;
     const height = 300;
     const margin = { top: 20, right: 20, bottom: 50, left: 50 };
 
-    // Remove any existing SVG for re-rendering
+    // Remove any existing SVG
     d3.select(chartRef.current).select("svg").remove();
 
     // Create SVG container
@@ -62,61 +49,49 @@ function Rating() {
       .append("g")
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
+    // Create a stack
+    const stack = d3.stack().keys(keys)(data);
+
     // Scales
     const x = d3
       .scaleBand()
-      .domain(data.map((d) => d.label))
+      .domain(data.map((d) => d.group))
       .range([0, width])
       .padding(0.1);
 
     const y = d3
       .scaleLinear()
-      .domain([0, 5]) // 1 to 5 scale
+      .domain([0, d3.max(stack[stack.length - 1], (d) => d[1])])
       .nice()
       .range([height, 0]);
 
-    const color = d3
-      .scaleLinear()
-      .domain([1, 5])
-      .range(["red", "green"]);
+    const colorScale = d3.scaleOrdinal().domain(keys).range(colors);
 
     // Axes
     svg
       .append("g")
-      .attr("class", "axis axis--x")
       .attr("transform", `translate(0, ${height})`)
       .call(d3.axisBottom(x));
 
-    svg
-      .append("g")
-      .attr("class", "axis axis--y")
-      .call(d3.axisLeft(y).ticks(5));
+    svg.append("g").call(d3.axisLeft(y));
 
-    // Bars
+    // Add bars
     svg
-      .selectAll(".bar")
-      .data(data)
+      .selectAll(".layer")
+      .data(stack)
+      .enter()
+      .append("g")
+      .attr("class", "layer")
+      .attr("fill", (d) => colorScale(d.key))
+      .selectAll("rect")
+      .data((d) => d)
       .enter()
       .append("rect")
-      .attr("class", "bar")
-      .attr("x", (d) => x(d.label))
-      .attr("y", (d) => y(d.status))
-      .attr("width", x.bandwidth())
-      .attr("height", (d) => height - y(d.status))
-      .attr("fill", (d) => color(d.status));
-
-    // Add labels
-    svg
-      .selectAll(".label")
-      .data(data)
-      .enter()
-      .append("text")
-      .attr("x", (d) => x(d.label) + x.bandwidth() / 2)
-      .attr("y", (d) => y(d.status) - 5)
-      .attr("text-anchor", "middle")
-      .text((d) => d.status)
-      .style("fill", "#555");
-  }, [])
+      .attr("x", (d) => x(d.data.group))
+      .attr("y", (d) => y(d[1]))
+      .attr("height", (d) => y(d[0]) - y(d[1]))
+      .attr("width", x.bandwidth());
+       }, [])
 
   return (
     <Main>
