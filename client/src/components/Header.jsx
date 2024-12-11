@@ -16,13 +16,22 @@ const Main  = styled.div`
 
 `;
 
+const AboutButton = styled.div`
+    width: 100px;
+    height: 25px;
+    background-color: transparent; 
+    border: transparent;
+    color: white;
+    font-size: .75em;
+    text-decoration: underline;
+`
 
 function Header({handleAboutModal}) {
 
     return(
         <Main>
             <p>Project Yuki</p>
-            <button onClick={handleAboutModal}>About</button>
+            <AboutButton onClick={handleAboutModal}>About</AboutButton>
         </Main>
     )
 }

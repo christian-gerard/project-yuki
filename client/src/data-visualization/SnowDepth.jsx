@@ -4,7 +4,6 @@ import styled from 'styled-components'
 
 const Main = styled.div`
     width:25%;
-    border: 1px solid black;
     overflow: hidden;
     white-space: nowrap;
 `

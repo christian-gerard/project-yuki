@@ -4,7 +4,6 @@ function Temp() {
   const Main = styled.div`
     width:25%;
     height:100%;
-    border: 1px solid black;
   `
 
   return (
