@@ -8,7 +8,7 @@ const Main  = styled.div`
     text-align: center;
     display: flex;
     justify-content:space-between;
-    justify-items:center;
+    align-items:center;
     height:5%;
     overflow: hidden;
     text-overflow: ellipses;
