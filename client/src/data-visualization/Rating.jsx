@@ -13,11 +13,21 @@ function Rating() {
       flex-direction: row;
   `
   const RatingChart = styled.div`
-      width:40%;
+      width:50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       font-size:1.5em;
       height:100%;
       overflow: hidden;
       white-space: nowrap;
+  `
+  const RatingLeft = styled.div`
+      width:30%;
+      height:100%;
+      display: flex;
+      flex-direction: row;
   `
   const RatingReasons = styled.div`
       width:60%;
@@ -29,7 +39,7 @@ function Rating() {
       display: flex;
       flex-direction: column;
       height: 90%;
-      width:50%;
+      width:90%;
       border: 1px solid black;
       justify-content: flex-end;
       border-radius: 1em;
@@ -44,25 +54,32 @@ function Rating() {
   const RatingLabel = styled.div`
       width:50%;
       height:100%;
-      font-size: 1em;
-
-  `
+      font-size: 10em;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+`
   useEffect(() => {
 
   }, [])
 
   return (
     <Main>
-
-      <RatingChart>
-        <p>Stoke Meter</p>
-        <StokeMeter>
-          <Meter/>
-          <Meter/>
-          <Meter/>
-        </StokeMeter>
-      </RatingChart>
-
+      <RatingLeft>
+        <RatingChart>
+          <p>Stoke Meter</p>
+          <StokeMeter>
+            <Meter/>
+            <Meter/>
+            <Meter/>
+          </StokeMeter>
+        </RatingChart>
+        <RatingLabel>
+          <p>5</p>
+        </RatingLabel>
+      </RatingLeft>
+    
       <RatingReasons>
         <p>Rating Reasons</p>
         <ul>
@@ -77,6 +94,6 @@ function Rating() {
         </ul>
       </RatingReasons>
     </Main>
-  )
+)
 }
 export default Rating
