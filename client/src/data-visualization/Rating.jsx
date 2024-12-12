@@ -13,14 +13,14 @@ function Rating() {
       flex-direction: row;
   `
   const RatingChart = styled.div`
-      width:30%;
+      width:40%;
       font-size:1.5em;
       height:100%;
       overflow: hidden;
       white-space: nowrap;
   `
   const RatingReasons = styled.div`
-      width:70%;
+      width:60%;
       overflow: hidden;
       white-space: nowrap;
       font-size: 1.5em;
@@ -29,18 +29,24 @@ function Rating() {
       display: flex;
       flex-direction: column;
       height: 90%;
-      width:80%;
+      width:50%;
       border: 1px solid black;
       justify-content: flex-end;
+      border-radius: 1em;
  `
   const Meter = styled.div`
       height:20%;
       width:100%;
       background-color: var(--light-cyan);
       border: black 1px solid;
+      border-radius: 1em;
   `
+  const RatingLabel = styled.div`
+      width:50%;
+      height:100%;
+      font-size: 1em;
 
-
+  `
   useEffect(() => {
 
   }, [])
