@@ -98,6 +98,7 @@ function Rating() {
         <p>+ Low Traffic</p>
         <p>+ Low Avy Danger at Low Elevations</p>
         <p>- High Winds</p>
+        <p>- High SWE</p>
       </RatingReasons>
     </Main>
 )
