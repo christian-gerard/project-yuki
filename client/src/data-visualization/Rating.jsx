@@ -32,6 +32,10 @@ function Rating() {
   const RatingReasons = styled.div`
       width:60%;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
       white-space: nowrap;
       font-size: 1.5em;
   `
@@ -42,24 +46,33 @@ function Rating() {
       width:90%;
       border: 1px solid black;
       justify-content: flex-end;
-      border-radius: 1em;
  `
   const Meter = styled.div`
       height:20%;
       width:100%;
       background-color: var(--light-cyan);
       border: black 1px solid;
-      border-radius: 1em;
   `
   const RatingLabel = styled.div`
       width:50%;
       height:100%;
-      font-size: 10em;
       color: black;
       display: flex;
       justify-content: center;
       align-items: center;
 `
+  const RatingNumber = styled.div`
+      background-color: var(--blue);
+      border-radius:100%;
+      font-size: 8em;
+      height: 150px;
+      width: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+
+  `
   useEffect(() => {
 
   }, [])
@@ -68,30 +81,23 @@ function Rating() {
     <Main>
       <RatingLeft>
         <RatingChart>
-          <p>Stoke Meter</p>
           <StokeMeter>
             <Meter/>
             <Meter/>
             <Meter/>
           </StokeMeter>
         </RatingChart>
+
         <RatingLabel>
-          <p>5</p>
+          <RatingNumber>5</RatingNumber>
         </RatingLabel>
       </RatingLeft>
     
       <RatingReasons>
-        <p>Rating Reasons</p>
-        <ul>
-          <li> Increased Snow </li>
-          <li> Low SWE </li>
-          <li> Good Avy Danger </li>
-        </ul>
-         <ul>
-          <li> Large Crowds  </li>
-          <li> Low Snowpack  </li>
-          <li> Traction Law In Place </li>
-        </ul>
+        <p>+ 8in of fresh</p> 
+        <p>+ Low Traffic</p>
+        <p>+ Low Avy Danger at Low Elevations</p>
+        <p>- High Winds</p>
       </RatingReasons>
     </Main>
 )
